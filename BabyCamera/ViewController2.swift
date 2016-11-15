@@ -29,7 +29,7 @@ class ViewController2: UIViewController ,AVAudioPlayerDelegate{
         
         //ボタンの生成.
         musicButton = UIButton()
-        musicButton.frame.size = CGSize(width: 70, height: 70)
+        musicButton.frame.size = CGSize(width: 69, height: 70)
         musicButton.layer.position = CGPoint(x: self.view.frame.width/2-100, y: self.view.bounds.height-50)
         musicButton.setTitle("▶︎", for: UIControlState.normal)
         musicButton.setTitleColor(UIColor.black, for: .normal)
