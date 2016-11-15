@@ -14,6 +14,8 @@
 		B2FAE6AA1DDADEF400E987EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2FAE6A81DDADEF400E987EF /* LaunchScreen.storyboard */; };
 		B2FAE6B51DDADEF400E987EF /* BabyCameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FAE6B41DDADEF400E987EF /* BabyCameraTests.swift */; };
 		B2FAE6C01DDADEF400E987EF /* BabyCameraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FAE6BF1DDADEF400E987EF /* BabyCameraUITests.swift */; };
+		B2FAE6CE1DDADF9700E987EF /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FAE6CD1DDADF9700E987EF /* ViewController2.swift */; };
+		B2FAE6D01DDAE13000E987EF /* Sample2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B2FAE6CF1DDAE13000E987EF /* Sample2.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		B2FAE6BB1DDADEF400E987EF /* BabyCameraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabyCameraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FAE6BF1DDADEF400E987EF /* BabyCameraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyCameraUITests.swift; sourceTree = "<group>"; };
 		B2FAE6C11DDADEF400E987EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2FAE6CD1DDADF9700E987EF /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		B2FAE6CF1DDAE13000E987EF /* Sample2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sample2.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +104,11 @@
 				B2FAE69F1DDADEF400E987EF /* AppDelegate.swift */,
 				B2FAE6A11DDADEF400E987EF /* ViewController.swift */,
 				B2FAE6A31DDADEF400E987EF /* Main.storyboard */,
+				B2FAE6CF1DDAE13000E987EF /* Sample2.mp3 */,
 				B2FAE6A61DDADEF400E987EF /* Assets.xcassets */,
 				B2FAE6A81DDADEF400E987EF /* LaunchScreen.storyboard */,
 				B2FAE6AB1DDADEF400E987EF /* Info.plist */,
+				B2FAE6CD1DDADF9700E987EF /* ViewController2.swift */,
 			);
 			path = BabyCamera;
 			sourceTree = "<group>";
@@ -193,6 +199,7 @@
 				TargetAttributes = {
 					B2FAE69B1DDADEF400E987EF = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 2E9JR98E93;
 						ProvisioningStyle = Automatic;
 					};
 					B2FAE6AF1DDADEF400E987EF = {
@@ -233,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2FAE6AA1DDADEF400E987EF /* LaunchScreen.storyboard in Resources */,
+				B2FAE6D01DDAE13000E987EF /* Sample2.mp3 in Resources */,
 				B2FAE6A71DDADEF400E987EF /* Assets.xcassets in Resources */,
 				B2FAE6A51DDADEF400E987EF /* Main.storyboard in Resources */,
 			);
@@ -261,6 +269,7 @@
 			files = (
 				B2FAE6A21DDADEF400E987EF /* ViewController.swift in Sources */,
 				B2FAE6A01DDADEF400E987EF /* AppDelegate.swift in Sources */,
+				B2FAE6CE1DDADF9700E987EF /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2E9JR98E93;
 				INFOPLIST_FILE = BabyCamera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.litech.Count.BabyCamera;
@@ -422,6 +432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2E9JR98E93;
 				INFOPLIST_FILE = BabyCamera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.litech.Count.BabyCamera;

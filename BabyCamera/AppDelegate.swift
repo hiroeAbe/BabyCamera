@@ -1,10 +1,4 @@
-//
-//  AppDelegate.swift
-//  BabyCamera
-//
-//  Created by 阿部弘枝 on 2016/11/15.
-//  Copyright © 2016年 阿部弘枝. All rights reserved.
-//
+
 
 import UIKit
 
