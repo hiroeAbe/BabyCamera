@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B21E0F041DE484DD00AE32B4 /* yellow1.png in Resources */ = {isa = PBXBuildFile; fileRef = B21E0F031DE484DD00AE32B4 /* yellow1.png */; };
+		B21E0F061DE4866E00AE32B4 /* kira2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B21E0F051DE4866E00AE32B4 /* kira2.mp3 */; };
+		B272DBD31DE4121B00AC20A1 /* shakin1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B272DBD21DE4121B00AC20A1 /* shakin1.mp3 */; };
+		B2C9279E1DDE9B6000B20EC3 /* Anpanmann.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C9279D1DDE9B6000B20EC3 /* Anpanmann.png */; };
+		B2C927A01DDE9F5700B20EC3 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C9279F1DDE9F5700B20EC3 /* camera.png */; };
+		B2C927A61DDEA23B00B20EC3 /* home2.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C927A51DDEA23B00B20EC3 /* home2.png */; };
+		B2C927A81DDEA24600B20EC3 /* music2.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C927A71DDEA24600B20EC3 /* music2.png */; };
 		B2FAE6A01DDADEF400E987EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FAE69F1DDADEF400E987EF /* AppDelegate.swift */; };
 		B2FAE6A21DDADEF400E987EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FAE6A11DDADEF400E987EF /* ViewController.swift */; };
 		B2FAE6A51DDADEF400E987EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2FAE6A31DDADEF400E987EF /* Main.storyboard */; };
@@ -36,6 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B21E0F031DE484DD00AE32B4 /* yellow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow1.png; sourceTree = "<group>"; };
+		B21E0F051DE4866E00AE32B4 /* kira2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kira2.mp3; sourceTree = "<group>"; };
+		B272DBD21DE4121B00AC20A1 /* shakin1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shakin1.mp3; sourceTree = "<group>"; };
+		B2C9279D1DDE9B6000B20EC3 /* Anpanmann.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Anpanmann.png; sourceTree = "<group>"; };
+		B2C9279F1DDE9F5700B20EC3 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		B2C927A51DDEA23B00B20EC3 /* home2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home2.png; sourceTree = "<group>"; };
+		B2C927A71DDEA24600B20EC3 /* music2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music2.png; sourceTree = "<group>"; };
 		B2FAE69C1DDADEF400E987EF /* BabyCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FAE69F1DDADEF400E987EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2FAE6A11DDADEF400E987EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +121,14 @@
 				B2FAE6CF1DDAE13000E987EF /* Sample2.mp3 */,
 				B2FAE6A61DDADEF400E987EF /* Assets.xcassets */,
 				B2FAE6A81DDADEF400E987EF /* LaunchScreen.storyboard */,
+				B21E0F051DE4866E00AE32B4 /* kira2.mp3 */,
 				B2FAE6AB1DDADEF400E987EF /* Info.plist */,
+				B21E0F031DE484DD00AE32B4 /* yellow1.png */,
+				B2C927A71DDEA24600B20EC3 /* music2.png */,
+				B272DBD21DE4121B00AC20A1 /* shakin1.mp3 */,
+				B2C927A51DDEA23B00B20EC3 /* home2.png */,
+				B2C9279F1DDE9F5700B20EC3 /* camera.png */,
+				B2C9279D1DDE9B6000B20EC3 /* Anpanmann.png */,
 				B2FAE6CD1DDADF9700E987EF /* ViewController2.swift */,
 			);
 			path = BabyCamera;
@@ -239,10 +260,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2C927A01DDE9F5700B20EC3 /* camera.png in Resources */,
+				B2C927A61DDEA23B00B20EC3 /* home2.png in Resources */,
+				B21E0F061DE4866E00AE32B4 /* kira2.mp3 in Resources */,
+				B2C9279E1DDE9B6000B20EC3 /* Anpanmann.png in Resources */,
 				B2FAE6AA1DDADEF400E987EF /* LaunchScreen.storyboard in Resources */,
 				B2FAE6D01DDAE13000E987EF /* Sample2.mp3 in Resources */,
+				B272DBD31DE4121B00AC20A1 /* shakin1.mp3 in Resources */,
 				B2FAE6A71DDADEF400E987EF /* Assets.xcassets in Resources */,
 				B2FAE6A51DDADEF400E987EF /* Main.storyboard in Resources */,
+				B21E0F041DE484DD00AE32B4 /* yellow1.png in Resources */,
+				B2C927A81DDEA24600B20EC3 /* music2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +542,7 @@
 				B2FAE6C61DDADEF400E987EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B2FAE6C71DDADEF400E987EF /* Build configuration list for PBXNativeTarget "BabyCameraTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +551,7 @@
 				B2FAE6C91DDADEF400E987EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B2FAE6CA1DDADEF400E987EF /* Build configuration list for PBXNativeTarget "BabyCameraUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +560,7 @@
 				B2FAE6CC1DDADEF400E987EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

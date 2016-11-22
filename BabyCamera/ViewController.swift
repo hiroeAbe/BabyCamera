@@ -29,7 +29,7 @@ class ViewController: UIViewController,AVAudioPlayerDelegate {
         myButton.layer.position = CGPoint(x: self.view.frame.width/2, y: self.view.frame.height/2)
         myButton.setTitle("▶︎", for: UIControlState.normal)
         myButton.setTitleColor(UIColor.black, for: .normal)
-        myButton.backgroundColor = UIColor.cyan
+        myButton.backgroundColor = UIColor.yellow
         myButton.addTarget(self, action: #selector(onClickMyButton), for: UIControlEvents.touchUpInside)
         myButton.layer.masksToBounds = true
         myButton.layer.cornerRadius = 50.0
@@ -39,9 +39,9 @@ class ViewController: UIViewController,AVAudioPlayerDelegate {
         nextButton = UIButton()
         nextButton.frame.size = CGSize(width: 120, height: 100)
         nextButton.layer.position = CGPoint(x: self.view.frame.width/2, y: self.view.frame.height/2+200)
-        nextButton.setTitle("カメラ起動", for: UIControlState.normal)
+        nextButton.setTitle("Camera", for: UIControlState.normal)
         nextButton.setTitleColor(UIColor.black, for: .normal)
-        nextButton.backgroundColor = UIColor.red
+        nextButton.backgroundColor = UIColor.orange
         
         nextButton.addTarget(self, action: #selector(onClickMyButton2), for: UIControlEvents.touchUpInside)
         nextButton.layer.masksToBounds = true

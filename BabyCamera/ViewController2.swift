@@ -3,6 +3,7 @@
 import UIKit
 import AVFoundation
 
+
 class ViewController2: UIViewController ,AVAudioPlayerDelegate{
     
     var myAudioPlayer : AVAudioPlayer!
@@ -13,12 +14,14 @@ class ViewController2: UIViewController ,AVAudioPlayerDelegate{
     var myDevice : AVCaptureDevice!
     // 画像のアウトプット.
     var myImageOutput: AVCaptureStillImageOutput!
-    
+   
+    //let myButton3 = UIButton()
+    var imageView : UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //再生する音源のURLを生成.
-        let soundFilePath : String = Bundle.main.path(forResource: "Sample2", ofType: "mp3")!
+        let soundFilePath : String = Bundle.main.path(forResource: "kira1", ofType: "mp3")!
         let fileURL = URL(fileURLWithPath: soundFilePath)
         
         //AVAudioPlayerのインスタンス化.
@@ -27,18 +30,7 @@ class ViewController2: UIViewController ,AVAudioPlayerDelegate{
         //AVAudioPlayerのデリゲートをセット.
         myAudioPlayer.delegate = self
         
-        //ボタンの生成.
-        musicButton = UIButton()
-        musicButton.frame.size = CGSize(width: 69, height: 70)
-        musicButton.layer.position = CGPoint(x: self.view.frame.width/2-100, y: self.view.bounds.height-50)
-        musicButton.setTitle("▶︎", for: UIControlState.normal)
-        musicButton.setTitleColor(UIColor.black, for: .normal)
-        musicButton.backgroundColor = UIColor.cyan
-        musicButton.addTarget(self, action: #selector(onClickMyButton3), for: UIControlEvents.touchUpInside)
-        musicButton.layer.masksToBounds = true
-        musicButton.layer.cornerRadius = 50.0
-        
-        // セッションの作成.
+                // セッションの作成.
         mySession = AVCaptureSession()
         
         // デバイス一覧の取得.
@@ -46,12 +38,12 @@ class ViewController2: UIViewController ,AVAudioPlayerDelegate{
         
         // バックカメラをmyDeviceに格納.
         for device in devices! {
-            if((device as AnyObject).position == AVCaptureDevicePosition.back){
+            if((device as AnyObject).position == AVCaptureDevicePosition.front){
                 myDevice = device as! AVCaptureDevice
             }
         }
         
-        // バックカメラからVideoInputを取得.
+        // フロントカメラからVideoInputを取得.
         let videoInput = try! AVCaptureDeviceInput.init(device: myDevice)
         // セッションに追加.
         mySession.addInput(videoInput)
@@ -74,30 +66,54 @@ class ViewController2: UIViewController ,AVAudioPlayerDelegate{
         mySession.startRunning()
         
         // UIボタンを作成.
-        let myButton = UIButton(frame: CGRect(x: 0, y: 0, width: 70, height: 40))
-        myButton.backgroundColor = UIColor.red
+        let myButton = UIButton(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+        //myButton.backgroundColor = UIColor.red
+        let sImage:UIImage = UIImage(named:"camera.png")!
+        
         myButton.layer.masksToBounds = true
-        myButton.setTitle("撮影", for: .normal)
-        myButton.layer.cornerRadius = 20.0
-        myButton.layer.position = CGPoint(x: self.view.bounds.width/2, y:self.view.bounds.height-50)
+        //myButton.setTitle("撮影", for: .normal)
+        myButton.setImage(sImage, for: .normal)
+        //myButton.layer.cornerRadius = 20.0
+        myButton.layer.position = CGPoint(x: self.view.bounds.width/2+120, y:self.view.bounds.height-450)
         myButton.addTarget(self, action: #selector(onClickMyButton), for: .touchUpInside)
         
-        let myButton2 = UIButton(frame: CGRect(x: 0, y: 0, width: 70, height: 40))
-        myButton2.backgroundColor = UIColor.blue
+        let myButton2 = UIButton(frame: CGRect(x: 0, y: 0, width: view.frame.size.width , height: view.frame.size.height))
+        //myButton2.backgroundColor = UIColor.blue
+        let hImage:UIImage = UIImage(named:"home2.png")!
         myButton2.layer.masksToBounds = true
-        myButton2.setTitle("戻る", for: .normal)
+        //myButton2.setTitle("戻る", for: .normal)
+        myButton2.setImage(hImage, for: .normal)
         myButton2.layer.cornerRadius = 20.0
         myButton2.layer.position = CGPoint(x: self.view.bounds.width/2+100, y:self.view.bounds.height-50)
         myButton2.addTarget(self, action: #selector(onClickMyButton2), for: .touchUpInside)
         
-        
+        let myButton3 = UIButton(frame: CGRect(x: 0, y: 0, width: view.frame.size.width , height: view.frame.size.height))
+        let aImage:UIImage = UIImage(named:"Anpanmann.png")!
+        myButton3.layer.masksToBounds = true
+        myButton3.setImage(aImage, for: .normal)
+        myButton3.layer.cornerRadius = 20.0
+        myButton3.layer.position = CGPoint(x: self.view.bounds.width/2-100, y:self.view.bounds.height/2+170)
+       // myButton3.addTarget(self, action: #selector(onClickMyButton4), for: UIControlEvents.valueChanged)
+        myButton3.addTarget(self, action: #selector(onClickMyButton3), for: .touchUpInside)
+
         // UIボタンをViewに追加.
         self.view.addSubview(myButton);
         self.view.addSubview(myButton2);
-        self.view.addSubview(musicButton);
-        
-        
+        self.view.addSubview(myButton3);
+       
+    
     }
+    
+    private var starImageView: FallingImageView {
+        let image = UIImage(named: "yellow1")!
+        let unitSize = image.size
+        let xPoint =  CGFloat(arc4random() % UInt32(self.view.frame.size.width - unitSize.width))
+        let rect = CGRect(x: xPoint, y: -unitSize.height, width: unitSize.width, height: unitSize.width)
+        let imageView = FallingImageView(frame: rect)
+        imageView.image = image
+        return imageView
+    }
+
     internal func onClickMyButton2(sender: UIButton){
         
         // 遷移するViewを定義する.
@@ -135,13 +151,18 @@ class ViewController2: UIViewController ,AVAudioPlayerDelegate{
             
             //myAudioPlayerを一時停止.
             myAudioPlayer.pause()
-            sender.setTitle("▶︎", for: .normal)
+            //sender.setTitle("", for: .normal)
         } else {
             
             //myAudioPlayerの再生.
             myAudioPlayer.play()
-            sender.setTitle("■", for: .normal)
+            //sender.setTitle("", for: .normal)
         }
+        let animationImageView = starImageView
+        self.view.addSubview(animationImageView)
+        animationImageView.falling()
+
+        
     }
     // MARK: - AVAudioPlayerDelegate
     
@@ -151,8 +172,9 @@ class ViewController2: UIViewController ,AVAudioPlayerDelegate{
         
         print("Music Finish")
         //再度myButtonを"▶︎"に設定.
-        musicButton.setTitle("▶︎", for: .normal)
+        //musicButton.setTitle("", for: .normal)
     }
+    
     
     //デコード中にエラーが起きた時に呼ばれるメソッド.
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
@@ -162,6 +184,46 @@ class ViewController2: UIViewController ,AVAudioPlayerDelegate{
             return
         }
     }
-    
+   
     
 }
+
+// くるくるアニメーションするUIImageView
+class FallingImageView: UIImageView {
+    private var fallingDuration: TimeInterval = 2.5
+    private let animationKey = "fallingAnimation"
+    
+    func falling(delayDouble: Double = 0.1) {
+        // 回転
+        let rotateAnimation = CABasicAnimation(keyPath: "transform")
+        rotateAnimation.duration = 0.3
+        rotateAnimation.repeatCount = Float.infinity
+        let transform = CATransform3DMakeRotation(CGFloat(M_PI),  0, 1.0, 0)
+        rotateAnimation.toValue = NSValue(caTransform3D : transform)
+        // 移動
+        let endPoint = CGPoint(x:self.layer.position.x, y:UIScreen.main.bounds.height)
+        let moveAnimation = CABasicAnimation(keyPath: "position")
+        moveAnimation.duration = fallingDuration
+        moveAnimation.fromValue = NSValue(cgPoint: self.layer.position)
+        moveAnimation.toValue = NSValue(cgPoint: endPoint)
+        // zPosition(最前面に表示し続けるための処理)
+        let zAnimation = CABasicAnimation(keyPath: "transform.translation.z")
+        zAnimation.fromValue = self.layer.bounds.size.width
+        zAnimation.repeatCount = Float.infinity
+        zAnimation.toValue = zAnimation.fromValue
+        
+        let animationGroup = CAAnimationGroup()
+        animationGroup.duration = fallingDuration
+        animationGroup.repeatCount = 1
+        animationGroup.animations = [moveAnimation, rotateAnimation, zAnimation]
+        
+        self.layer.add(animationGroup, forKey: self.animationKey)
+    }
+    
+    func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+        if flag {
+            self.removeFromSuperview()
+        }
+    }
+}
+
